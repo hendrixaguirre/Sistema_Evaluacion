@@ -11,6 +11,8 @@ import java.time.LocalDate;
 
 public class Cliente {
     private final IntegerProperty id = new SimpleIntegerProperty();
+    private final StringProperty nombres = new SimpleStringProperty();
+    private final StringProperty apellidos = new SimpleStringProperty();
     private final StringProperty nombreCompleto = new SimpleStringProperty();
     private final ObjectProperty<TipoCliente> tipoCliente = new SimpleObjectProperty<>();
     private final StringProperty ciudad = new SimpleStringProperty();
@@ -19,6 +21,8 @@ public class Cliente {
     private final StringProperty identificacion = new SimpleStringProperty();
     private final StringProperty telefono = new SimpleStringProperty();
     private final StringProperty correo = new SimpleStringProperty();
+    private final StringProperty servicioDeInteres = new SimpleStringProperty();
+    private final StringProperty fotografia = new SimpleStringProperty();
 
     public Cliente() {
     }
@@ -37,6 +41,20 @@ public class Cliente {
         setCorreo(correo);
     }
 
+    public Cliente(String nombres, String apellidos, String tipoCliente, String ciudad,
+                   LocalDate fechaNacimiento, String tipoSolicitud,
+                   String servicioDeInteres, String fotografia) {
+        setNombres(nombres);
+        setApellidos(apellidos);
+        setNombreCompleto((nuloAVacio(nombres) + " " + nuloAVacio(apellidos)).trim());
+        setTipoCliente(tipoClienteDesdeTexto(tipoCliente));
+        setCiudad(ciudad);
+        setFechaNacimiento(fechaNacimiento);
+        setTipoSolicitud(tipoSolicitudDesdeTexto(tipoSolicitud));
+        setServicioDeInteres(servicioDeInteres);
+        setFotografia(fotografia);
+    }
+
     public int getId() {
         return id.get();
     }
@@ -47,6 +65,30 @@ public class Cliente {
 
     public IntegerProperty idProperty() {
         return id;
+    }
+
+    public String getNombres() {
+        return nombres.get();
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres.set(nombres);
+    }
+
+    public StringProperty nombresProperty() {
+        return nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos.get();
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos.set(apellidos);
+    }
+
+    public StringProperty apellidosProperty() {
+        return apellidos;
     }
 
     public String getNombreCompleto() {
@@ -143,5 +185,57 @@ public class Cliente {
 
     public StringProperty correoProperty() {
         return correo;
+    }
+
+    public String getServicioDeInteres() {
+        return servicioDeInteres.get();
+    }
+
+    public void setServicioDeInteres(String servicioDeInteres) {
+        this.servicioDeInteres.set(servicioDeInteres);
+    }
+
+    public StringProperty servicioDeInteresProperty() {
+        return servicioDeInteres;
+    }
+
+    public String getFotografia() {
+        return fotografia.get();
+    }
+
+    public void setFotografia(String fotografia) {
+        this.fotografia.set(fotografia);
+    }
+
+    public StringProperty fotografiaProperty() {
+        return fotografia;
+    }
+
+    private static TipoCliente tipoClienteDesdeTexto(String texto) {
+        if (texto == null || texto.isBlank()) {
+            return null;
+        }
+        for (TipoCliente tipo : TipoCliente.values()) {
+            if (tipo.getEtiqueta().equalsIgnoreCase(texto) || tipo.name().equalsIgnoreCase(texto)) {
+                return tipo;
+            }
+        }
+        return null;
+    }
+
+    private static TipoSolicitud tipoSolicitudDesdeTexto(String texto) {
+        if (texto == null || texto.isBlank()) {
+            return null;
+        }
+        for (TipoSolicitud tipo : TipoSolicitud.values()) {
+            if (tipo.getEtiqueta().equalsIgnoreCase(texto) || tipo.name().equalsIgnoreCase(texto)) {
+                return tipo;
+            }
+        }
+        return null;
+    }
+
+    private static String nuloAVacio(String valor) {
+        return valor == null ? "" : valor;
     }
 }

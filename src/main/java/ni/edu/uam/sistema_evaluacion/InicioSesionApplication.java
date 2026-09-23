@@ -11,7 +11,7 @@ public class InicioSesionApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(InicioSesionApplication.class.getResource("inicio-sesion.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 495, 400);
         stage.setTitle("Inicio de Sesión");
         stage.setScene(scene);
         stage.show();
