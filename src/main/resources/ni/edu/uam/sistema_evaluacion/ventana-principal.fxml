@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.sistema_evaluacion.controller.VentanaPrincipalController">
+    <children>
+        <MenuBar layoutX="0.0" layoutY="0.0" prefWidth="600.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Clientes">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#abrirRegistro" text="Registrar cliente" />
+                        <MenuItem mnemonicParsing="false" onAction="#abrirConsulta" text="Consultar clientes" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ToolBar layoutX="0.0" layoutY="29.0" prefWidth="600.0">
+            <items>
+                <Button mnemonicParsing="false" onAction="#abrirRegistro" text="Registrar cliente" />
+                <Button mnemonicParsing="false" onAction="#abrirConsulta" text="Consultar clientes" />
+            </items>
+        </ToolBar>
+        <Label layoutX="152.0" layoutY="106.0" text="Sistema de Solicitudes">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+        <Label layoutX="207.0" layoutY="159.0" text="Seleccione una opción" />
+        <Button fx:id="btnRegistrarCliente" layoutX="89.0" layoutY="223.0" mnemonicParsing="false" onAction="#abrirRegistro" prefHeight="55.0" prefWidth="185.0" text="Registrar cliente" />
+        <Button fx:id="btnConsultarClientes" layoutX="325.0" layoutY="223.0" mnemonicParsing="false" onAction="#abrirConsulta" prefHeight="55.0" prefWidth="185.0" text="Consultar clientes">
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#abrirConsulta" text="Abrir consulta de clientes" />
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </Button>
+    </children>
+</AnchorPane>
