@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ni.edu.uam.sistema_evaluacion.controller.DetalleClienteController"
+            prefHeight="520.0" prefWidth="480.0">
+    <children>
+        <Label layoutX="20.0" layoutY="18.0" text="Detalle o edición del cliente"/>
+
+        <Label layoutX="20.0" layoutY="60.0" text="Nombre completo"/>
+        <TextField fx:id="txtNombreCompleto" layoutX="180.0" layoutY="56.0" prefWidth="280.0"/>
+
+        <Label layoutX="20.0" layoutY="100.0" text="Tipo de cliente"/>
+        <ComboBox fx:id="cmbTipoCliente" layoutX="180.0" layoutY="96.0" prefWidth="280.0"/>
+
+        <Label layoutX="20.0" layoutY="140.0" text="Ciudad"/>
+        <TextField fx:id="txtCiudad" layoutX="180.0" layoutY="136.0" prefWidth="280.0"/>
+
+        <Label layoutX="20.0" layoutY="180.0" text="Fecha de nacimiento"/>
+        <DatePicker fx:id="dtpFechaNacimiento" layoutX="180.0" layoutY="176.0" prefWidth="280.0"/>
+
+        <Label layoutX="20.0" layoutY="220.0" text="Tipo de solicitud"/>
+        <ComboBox fx:id="cmbTipoSolicitud" layoutX="180.0" layoutY="216.0" prefWidth="280.0"/>
+
+        <Label layoutX="20.0" layoutY="260.0" text="Identificación"/>
+        <TextField fx:id="txtIdentificacion" layoutX="180.0" layoutY="256.0" prefWidth="280.0"/>
+
+        <Label layoutX="20.0" layoutY="300.0" text="Teléfono"/>
+        <TextField fx:id="txtTelefono" layoutX="180.0" layoutY="296.0" prefWidth="280.0"/>
+
+        <Label layoutX="20.0" layoutY="340.0" text="Correo"/>
+        <TextField fx:id="txtCorreo" layoutX="180.0" layoutY="336.0" prefWidth="280.0"/>
+
+        <Button layoutX="250.0" layoutY="400.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar"/>
+        <Button layoutX="340.0" layoutY="400.0" mnemonicParsing="false" onAction="#guardarCambios" text="Guardar"/>
+    </children>
+</AnchorPane>
