@@ -48,7 +48,7 @@ El proyecto utiliza una estructura organizada en diferentes paquetes:
 
 - **Hendrix Aguirre Zamora**
 - **Jarold Montealto Cantillano**
-- **Fanor Velázquez Sarabia**
+- **Fanor Velasquez Sarabia**
 
 ## Repositorio
 
