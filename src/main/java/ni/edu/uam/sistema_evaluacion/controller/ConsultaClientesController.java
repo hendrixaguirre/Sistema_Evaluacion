@@ -64,6 +64,19 @@ public class ConsultaClientesController {
     }
 
     @FXML
+    private void volverAlMenu() {
+        try {
+            Vistas.irAVentanaPrincipal(tablaClientes.getScene().getWindow());
+        } catch (IOException e) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("Consulta de clientes");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No se pudo volver al menú principal.");
+            alerta.showAndWait();
+        }
+    }
+
+    @FXML
     private void alHacerClicEnTabla(MouseEvent evento) {
         Cliente seleccionado = tablaClientes.getSelectionModel().getSelectedItem();
         actualizarEtiquetaSeleccion(seleccionado);

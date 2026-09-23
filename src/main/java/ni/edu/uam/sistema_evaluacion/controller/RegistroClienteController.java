@@ -5,11 +5,12 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import ni.edu.uam.sistema_evaluacion.data.RepositorioClientes;
 import ni.edu.uam.sistema_evaluacion.model.Cliente;
+import ni.edu.uam.sistema_evaluacion.util.Vistas;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Optional;
 
 public class RegistroClienteController {
@@ -187,6 +188,19 @@ public class RegistroClienteController {
     }
 
     @FXML
+    private void volverAlMenu() {
+        try {
+            Vistas.irAVentanaPrincipal(btnCancelar.getScene().getWindow());
+        } catch (IOException e) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("Error");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No se pudo volver al menú principal.");
+            alerta.showAndWait();
+        }
+    }
+
+    @FXML
     private void cerrarRegistro() {
 
         Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
@@ -197,8 +211,7 @@ public class RegistroClienteController {
         Optional<ButtonType> respuesta = confirmacion.showAndWait();
 
         if (respuesta.isPresent() && respuesta.get() == ButtonType.OK) {
-            Stage stage = (Stage) btnCancelar.getScene().getWindow();
-            stage.close();
+            volverAlMenu();
         }
     }
 }

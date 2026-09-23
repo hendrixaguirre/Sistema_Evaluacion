@@ -11,9 +11,42 @@ import ni.edu.uam.sistema_evaluacion.controller.DetalleClienteController;
 import ni.edu.uam.sistema_evaluacion.model.Cliente;
 
 import java.io.IOException;
+import java.net.URL;
 
 public final class Vistas {
     private Vistas() {
+    }
+
+    public static void irAInicioSesion(Window origen) throws IOException {
+        cambiarEscena(origen, "inicio-sesion.fxml", "Inicio de sesión", 495, 400);
+    }
+
+    public static void irAVentanaPrincipal(Window origen) throws IOException {
+        cambiarEscena(origen, "ventana-principal.fxml", "Ventana principal", 600, 400);
+    }
+
+    public static void irARegistroCliente(Window origen) throws IOException {
+        cambiarEscena(origen, "registro-cliente.fxml", "Registro de cliente", 716, 720);
+    }
+
+    public static void irAConsultaClientes(Window origen) throws IOException {
+        cambiarEscena(origen, "consulta-clientes.fxml", "Consulta de clientes", 900, 560);
+    }
+
+    public static void cambiarEscena(Window origen, String fxml, String titulo, double ancho, double alto) throws IOException {
+        URL archivo = InicioSesionApplication.class.getResource(fxml);
+        if (archivo == null) {
+            throw new IOException("No se encontró el archivo FXML: " + fxml);
+        }
+
+        Parent vista = FXMLLoader.load(archivo);
+        Stage ventana = (Stage) origen;
+        ventana.setScene(new Scene(vista, ancho, alto));
+        ventana.setTitle(titulo);
+        ventana.setWidth(ancho);
+        ventana.setHeight(alto);
+        ventana.centerOnScreen();
+        ventana.show();
     }
 
     public static void abrirConsultaClientes(Window propietario) throws IOException {

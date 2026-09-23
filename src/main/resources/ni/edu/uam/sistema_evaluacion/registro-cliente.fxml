@@ -71,6 +71,7 @@
          </children>
       </GridPane>
       <Button fx:id="btnSeleccionarImagen" layoutX="504.0" layoutY="505.0" mnemonicParsing="false" onAction="#seleccionarImagen" prefHeight="31.0" prefWidth="126.0" text="Seleccionar imagen" />
+      <Button fx:id="btnVolver" layoutX="47.0" layoutY="648.0" mnemonicParsing="false" onAction="#volverAlMenu" prefHeight="48.0" prefWidth="88.0" text="Volver" />
       <HBox layoutX="405.0" layoutY="636.0" prefHeight="57.0" prefWidth="310.0" spacing="10.0">
          <children>
             <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cerrarRegistro" prefHeight="48.0" prefWidth="88.0" text="Cancelar" />
