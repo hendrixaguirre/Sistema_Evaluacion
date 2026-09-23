@@ -1,40 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ni.edu.uam.sistema_evaluacion.controller.DetalleClienteController"
-            prefHeight="520.0" prefWidth="480.0">
+<VBox prefHeight="560.0" prefWidth="560.0" spacing="16.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.sistema_evaluacion.controller.DetalleClienteController">
+    <padding>
+        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+    </padding>
     <children>
-        <Label layoutX="20.0" layoutY="18.0" text="Detalle o edición del cliente"/>
-
-        <Label layoutX="20.0" layoutY="60.0" text="Nombre completo"/>
-        <TextField fx:id="txtNombreCompleto" layoutX="180.0" layoutY="56.0" prefWidth="280.0"/>
-
-        <Label layoutX="20.0" layoutY="100.0" text="Tipo de cliente"/>
-        <ComboBox fx:id="cmbTipoCliente" layoutX="180.0" layoutY="96.0" prefWidth="280.0"/>
-
-        <Label layoutX="20.0" layoutY="140.0" text="Ciudad"/>
-        <TextField fx:id="txtCiudad" layoutX="180.0" layoutY="136.0" prefWidth="280.0"/>
-
-        <Label layoutX="20.0" layoutY="180.0" text="Fecha de nacimiento"/>
-        <DatePicker fx:id="dtpFechaNacimiento" layoutX="180.0" layoutY="176.0" prefWidth="280.0"/>
-
-        <Label layoutX="20.0" layoutY="220.0" text="Tipo de solicitud"/>
-        <ComboBox fx:id="cmbTipoSolicitud" layoutX="180.0" layoutY="216.0" prefWidth="280.0"/>
-
-        <Label layoutX="20.0" layoutY="260.0" text="Identificación"/>
-        <TextField fx:id="txtIdentificacion" layoutX="180.0" layoutY="256.0" prefWidth="280.0"/>
-
-        <Label layoutX="20.0" layoutY="300.0" text="Teléfono"/>
-        <TextField fx:id="txtTelefono" layoutX="180.0" layoutY="296.0" prefWidth="280.0"/>
-
-        <Label layoutX="20.0" layoutY="340.0" text="Correo"/>
-        <TextField fx:id="txtCorreo" layoutX="180.0" layoutY="336.0" prefWidth="280.0"/>
-
-        <Button layoutX="250.0" layoutY="400.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar"/>
-        <Button layoutX="340.0" layoutY="400.0" mnemonicParsing="false" onAction="#guardarCambios" text="Guardar"/>
+        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Detalle o edición del cliente">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Separator prefWidth="512.0" />
+        <GridPane hgap="16.0" vgap="14.0" VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" minWidth="160.0" prefWidth="170.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="260.0" prefWidth="320.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" />
+            </rowConstraints>
+            <children>
+                <Label text="Nombre completo" />
+                <TextField fx:id="txtNombreCompleto" maxWidth="1.7976931348623157E308" prefWidth="320.0" GridPane.columnIndex="1" />
+                <Label text="Tipo de cliente" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cmbTipoCliente" maxWidth="1.7976931348623157E308" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Ciudad" GridPane.rowIndex="2" />
+                <TextField fx:id="txtCiudad" maxWidth="1.7976931348623157E308" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Fecha de nacimiento" GridPane.rowIndex="3" />
+                <DatePicker fx:id="dtpFechaNacimiento" maxWidth="1.7976931348623157E308" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Tipo de solicitud" GridPane.rowIndex="4" />
+                <ComboBox fx:id="cmbTipoSolicitud" maxWidth="1.7976931348623157E308" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Identificación" GridPane.rowIndex="5" />
+                <TextField fx:id="txtIdentificacion" maxWidth="1.7976931348623157E308" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="Teléfono" GridPane.rowIndex="6" />
+                <TextField fx:id="txtTelefono" maxWidth="1.7976931348623157E308" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label text="Correo" GridPane.rowIndex="7" />
+                <TextField fx:id="txtCorreo" maxWidth="1.7976931348623157E308" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            </children>
+        </GridPane>
+        <HBox alignment="CENTER_RIGHT" spacing="12.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#cancelar" prefHeight="36.0" prefWidth="110.0" text="Cancelar" />
+                <Button mnemonicParsing="false" onAction="#guardarCambios" prefHeight="36.0" prefWidth="110.0" text="Guardar" />
+            </children>
+        </HBox>
     </children>
-</AnchorPane>
+</VBox>

@@ -18,22 +18,26 @@ public final class Vistas {
     }
 
     public static void irAInicioSesion(Window origen) throws IOException {
-        cambiarEscena(origen, "inicio-sesion.fxml", "Inicio de sesión", 495, 400);
+        cambiarEscena(origen, "inicio-sesion.fxml", "Inicio de sesión");
     }
 
     public static void irAVentanaPrincipal(Window origen) throws IOException {
-        cambiarEscena(origen, "ventana-principal.fxml", "Ventana principal", 600, 400);
+        cambiarEscena(origen, "ventana-principal.fxml", "Ventana principal");
     }
 
     public static void irARegistroCliente(Window origen) throws IOException {
-        cambiarEscena(origen, "registro-cliente.fxml", "Registro de cliente", 716, 720);
+        cambiarEscena(origen, "registro-cliente.fxml", "Registro de cliente");
     }
 
     public static void irAConsultaClientes(Window origen) throws IOException {
-        cambiarEscena(origen, "consulta-clientes.fxml", "Consulta de clientes", 900, 560);
+        cambiarEscena(origen, "consulta-clientes.fxml", "Consulta de clientes");
     }
 
     public static void cambiarEscena(Window origen, String fxml, String titulo, double ancho, double alto) throws IOException {
+        cambiarEscena(origen, fxml, titulo);
+    }
+
+    public static void cambiarEscena(Window origen, String fxml, String titulo) throws IOException {
         URL archivo = InicioSesionApplication.class.getResource(fxml);
         if (archivo == null) {
             throw new IOException("No se encontró el archivo FXML: " + fxml);
@@ -41,10 +45,9 @@ public final class Vistas {
 
         Parent vista = FXMLLoader.load(archivo);
         Stage ventana = (Stage) origen;
-        ventana.setScene(new Scene(vista, ancho, alto));
+        ventana.setScene(new Scene(vista));
         ventana.setTitle(titulo);
-        ventana.setWidth(ancho);
-        ventana.setHeight(alto);
+        ventana.sizeToScene();
         ventana.centerOnScreen();
         ventana.show();
     }
@@ -53,7 +56,8 @@ public final class Vistas {
         FXMLLoader loader = new FXMLLoader(InicioSesionApplication.class.getResource("consulta-clientes.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Consulta de clientes");
-        stage.setScene(new Scene(loader.load(), 920, 560));
+        stage.setScene(new Scene(loader.load()));
+        stage.sizeToScene();
         stage.setMinWidth(760);
         stage.setMinHeight(480);
         if (propietario != null) {
@@ -74,7 +78,8 @@ public final class Vistas {
         if (propietario != null) {
             stage.initOwner(propietario);
         }
-        stage.setScene(new Scene(raiz, 520, 580));
+        stage.setScene(new Scene(raiz));
+        stage.sizeToScene();
         stage.setResizable(false);
         stage.show();
     }

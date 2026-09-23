@@ -1,83 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="707.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.sistema_evaluacion.controller.RegistroClienteController">
-   <children>
-      <Label layoutX="253.0" layoutY="33.0" text="REGISTRO DE CLIENTE">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Label>
-      <Separator layoutX="-5.0" layoutY="110.0" prefHeight="23.0" prefWidth="731.0" />
-      <Label layoutX="271.0" layoutY="77.0" text="Ingrese todos los datos del cliente." />
-      <GridPane layoutX="47.0" layoutY="133.0" prefHeight="475.0" prefWidth="626.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="123.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="503.0" minWidth="10.0" prefWidth="503.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="148.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="161.0" minHeight="0.0" prefHeight="60.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="184.0" minHeight="2.0" prefHeight="25.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="292.0" minHeight="10.0" prefHeight="157.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="Nombre:" />
-            <TextField fx:id="txtNombres" promptText="Ingrese nombre del cliente" GridPane.columnIndex="1" />
-            <Label text="Apellidos:" GridPane.rowIndex="1" />
-            <TextField fx:id="txtApellidos" promptText="Ingrese apellidos del cliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Tipo de cliente:" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cmbTipoCliente" prefHeight="25.0" prefWidth="224.0" promptText="Seleccione tipo de cliente" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label text="Ciudad:" GridPane.rowIndex="3" />
-            <DatePicker fx:id="dtpFechaNacimiento" prefHeight="25.0" prefWidth="226.0" promptText="Seleccione fecha de nacimiento" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label text="Fecha de nacimiento:" GridPane.rowIndex="4" />
-            <ComboBox fx:id="cmbCiudad" prefHeight="25.0" prefWidth="225.0" promptText="Seleccione ciudad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Tipo de solicitud:" GridPane.rowIndex="5" />
-            <Label text="Servicio de interés:" GridPane.rowIndex="6" />
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <children>
-                  <CheckBox fx:id="chkBancaLinea" mnemonicParsing="false" text="Banca en línea " />
-                  <CheckBox fx:id="chkTransferenciasInternacionales" mnemonicParsing="false" text="Transferencias internacionales" />
-                  <CheckBox fx:id="chkSeguroFinanciero" mnemonicParsing="false" text="Seguro financiero" />
-               </children>
-            </HBox>
-            <Label text="Fotografía:" GridPane.rowIndex="7" />
-                  <ImageView fx:id="imgFotografia" fitHeight="162.0" fitWidth="329.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="503.0" spacing="10.0">
-                     <children>
-                        <RadioButton fx:id="rbtnCreditoPersonal" mnemonicParsing="false" text="Crédito personal" />
-                        <RadioButton fx:id="rbtnCuentaAhorro" mnemonicParsing="false" text="Cuenta de ahorro" />
-                        <RadioButton fx:id="rbtnTarjetaCredito" mnemonicParsing="false" text="Tarjeta de crédito" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="503.0" spacing="10.0">
-                     <children>
-                        <RadioButton fx:id="rbtnPrestamoHipotecario" mnemonicParsing="false" text="Préstamo Hipotecario" />
-                        <RadioButton fx:id="rbtnCuentaCorriente" mnemonicParsing="false" text="Cuenta corriente" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </GridPane>
-      <Button fx:id="btnSeleccionarImagen" layoutX="504.0" layoutY="505.0" mnemonicParsing="false" onAction="#seleccionarImagen" prefHeight="31.0" prefWidth="126.0" text="Seleccionar imagen" />
-      <Button fx:id="btnVolver" layoutX="47.0" layoutY="648.0" mnemonicParsing="false" onAction="#volverAlMenu" prefHeight="48.0" prefWidth="88.0" text="Volver" />
-      <HBox layoutX="405.0" layoutY="636.0" prefHeight="57.0" prefWidth="310.0" spacing="10.0">
-         <children>
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cerrarRegistro" prefHeight="48.0" prefWidth="88.0" text="Cancelar" />
-            <Button fx:id="btnLimpiarControles" mnemonicParsing="false" onAction="#limpiarControles" prefHeight="47.0" prefWidth="91.0" text="Limpiar" />
-            <Button fx:id="btnGuardarRegistro" mnemonicParsing="false" onAction="#guardarRegistro" prefHeight="46.0" prefWidth="98.0" text="Guardar" />
-         </children>
-      </HBox>
-   </children>
-</AnchorPane>
+<VBox prefHeight="720.0" prefWidth="800.0" spacing="12.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.sistema_evaluacion.controller.RegistroClienteController">
+    <padding>
+        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+    </padding>
+    <children>
+        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Registro de cliente">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Ingrese todos los datos del cliente." />
+        <Separator prefWidth="752.0" />
+        <GridPane hgap="16.0" vgap="12.0" VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" minWidth="160.0" prefWidth="180.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="280.0" prefWidth="540.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints minHeight="32.0" prefHeight="36.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints minHeight="64.0" prefHeight="72.0" valignment="TOP" vgrow="NEVER" />
+                <RowConstraints minHeight="32.0" prefHeight="40.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints minHeight="140.0" prefHeight="170.0" valignment="TOP" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <Label text="Nombre:" />
+                <TextField fx:id="txtNombres" maxWidth="1.7976931348623157E308" promptText="Ingrese nombre del cliente" GridPane.columnIndex="1" />
+                <Label text="Apellidos:" GridPane.rowIndex="1" />
+                <TextField fx:id="txtApellidos" maxWidth="1.7976931348623157E308" promptText="Ingrese apellidos del cliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Tipo de cliente:" GridPane.rowIndex="2" />
+                <ComboBox fx:id="cmbTipoCliente" maxWidth="1.7976931348623157E308" prefWidth="280.0" promptText="Seleccione tipo de cliente" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Ciudad:" GridPane.rowIndex="3" />
+                <ComboBox fx:id="cmbCiudad" maxWidth="1.7976931348623157E308" prefWidth="280.0" promptText="Seleccione ciudad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Fecha de nacimiento:" GridPane.rowIndex="4" />
+                <DatePicker fx:id="dtpFechaNacimiento" maxWidth="1.7976931348623157E308" prefWidth="280.0" promptText="Seleccione fecha de nacimiento" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Tipo de solicitud:" GridPane.rowIndex="5" />
+                <VBox spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="16.0">
+                            <children>
+                                <RadioButton fx:id="rbtnCreditoPersonal" mnemonicParsing="false" text="Crédito personal" />
+                                <RadioButton fx:id="rbtnCuentaAhorro" mnemonicParsing="false" text="Cuenta de ahorro" />
+                                <RadioButton fx:id="rbtnTarjetaCredito" mnemonicParsing="false" text="Tarjeta de crédito" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="16.0">
+                            <children>
+                                <RadioButton fx:id="rbtnPrestamoHipotecario" mnemonicParsing="false" text="Préstamo Hipotecario" />
+                                <RadioButton fx:id="rbtnCuentaCorriente" mnemonicParsing="false" text="Cuenta corriente" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Label text="Servicio de interés:" GridPane.rowIndex="6" />
+                <HBox alignment="CENTER_LEFT" spacing="16.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <children>
+                        <CheckBox fx:id="chkBancaLinea" mnemonicParsing="false" text="Banca en línea " />
+                        <CheckBox fx:id="chkTransferenciasInternacionales" mnemonicParsing="false" text="Transferencias internacionales" />
+                        <CheckBox fx:id="chkSeguroFinanciero" mnemonicParsing="false" text="Seguro financiero" />
+                    </children>
+                </HBox>
+                <Label text="Fotografía:" GridPane.rowIndex="7" />
+                <VBox alignment="TOP_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <children>
+                        <ImageView fx:id="imgFotografia" fitHeight="140.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnSeleccionarImagen" mnemonicParsing="false" onAction="#seleccionarImagen" prefHeight="32.0" prefWidth="160.0" text="Seleccionar imagen" />
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+        <HBox alignment="CENTER_LEFT" spacing="12.0">
+            <children>
+                <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#volverAlMenu" prefHeight="36.0" prefWidth="110.0" text="Volver" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cerrarRegistro" prefHeight="36.0" prefWidth="110.0" text="Cancelar" />
+                <Button fx:id="btnLimpiarControles" mnemonicParsing="false" onAction="#limpiarControles" prefHeight="36.0" prefWidth="110.0" text="Limpiar" />
+                <Button fx:id="btnGuardarRegistro" mnemonicParsing="false" onAction="#guardarRegistro" prefHeight="36.0" prefWidth="110.0" text="Guardar" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
